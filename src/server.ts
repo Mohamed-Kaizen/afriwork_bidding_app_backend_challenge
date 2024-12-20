@@ -6,6 +6,7 @@ import * as Inert from "@hapi/inert"
 import Swagger from "hapi-swagger"
 import HapiAuthJwt2 from "hapi-auth-jwt2"
 import { validate } from "./utils/auth"
+import { authRoutes } from "./routes/auth"
 
 dotenv.config()
 
@@ -49,6 +50,8 @@ async function init() {
 	})
 
 	server.auth.default("jwt")
+
+	server.route(authRoutes)
 
 	await server.start()
 

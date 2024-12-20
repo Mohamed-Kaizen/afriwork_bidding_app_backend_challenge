@@ -25,19 +25,3 @@ export async function validate(
 
 	return { isValid: !!user }
 }
-
-/**
- * This function is used to authenticate the user. It checks if the user exists in the database and if the password is correct.
- *
- * @param username - The username of the user
- *
- * @param password - The password of the user
- *
- * @returns A JWT token if the user exists and the password is correct, otherwise it throws an error.
- */
-export async function authenticate(username: string, password: string) {
-	const user = await db.user.findUnique({ where: { username } })
-
-	if (user && (await verifyPassword(password, user.password))) return generateToken(user.id)
-	else throw new Error("Invalid credentials")
-}
