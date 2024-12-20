@@ -35,12 +35,11 @@ A bidding app backend challenge for Afriwork.
 - [ ] Create endpoints for:
     - [ ] Listing all bids (filter by status).
         - [ ] Listing bids by user(owner).
-        - [ ] Listing bids by category.
-        - [ ] show total bids on the listing page
-    - [ ] Viewing a single bid.
-    - [ ] Creating a new bid.
-    - [ ] Updating a bid (by owner).
-    - [ ] Closing a bid (by owner).
+        - [x] show total bids on the listing page
+    - [x] Viewing a single bid.
+    - [x] Creating a new bid.
+    - [x] Updating a bid (by owner).
+    - [x] Closing a bid (by owner).
 
 ### Bidding
 
