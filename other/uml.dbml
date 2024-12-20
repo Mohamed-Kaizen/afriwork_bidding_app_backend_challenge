@@ -1,0 +1,65 @@
+Project Common {
+  database_type: 'PostgreSQL'
+}
+
+Table bid {
+  id UUID [not null, pk]
+
+  amount numeric [not null]
+
+  listing_id UUID [not null]
+
+  user_id UUID [not null]
+
+  created_at timestamp(0) [not null]
+}
+
+Table listing {
+  id UUID [not null, pk]
+
+  title text [not null]
+
+  description text [null]
+
+  starting_bid numeric [not null]
+
+  current_bid numeric [null]
+
+  is_closed boolean [null, default: false]
+
+  created_by_id UUID [not null]
+
+  created_at timestamp(0) [not null]
+
+  closed_at timestamp(0) [null]
+}
+
+
+Table notification {
+  id UUID [not null, pk]
+
+  message text [not null]
+
+  user_id UUID [not null]
+
+  created_at timestamp(0) [not null]
+}
+
+Table user {
+  id UUID [not null, pk]
+
+  username text [null, unique, note: 'The username of the user']
+
+  password text [null, note: 'The password after being hashed']
+
+  created_at timestamp(0) [not null]
+}
+
+
+Ref: "listing"."id" < "bid"."listing_id"
+
+Ref: "user"."id" < "listing"."created_by_id"
+
+Ref: "user"."id" < "notification"."user_id"
+
+Ref: "bid"."user_id" < "user"."id"

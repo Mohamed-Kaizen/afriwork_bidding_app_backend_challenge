@@ -1,0 +1,25 @@
+.DS_Store
+node_modules
+/build
+/.nuxt
+/package
+.env
+.env.*
+!.env.example
+/.vercel
+/.output
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+.eslintrc-auto-import.json
+/i18n
+./server/.loader
+server/.loader
+./server/.loader/*
+./server/.generated
+./server/.generated/*
+/.vscode
+*.css

@@ -1,0 +1,36 @@
+{
+	"name": "afriwork_bidding_app_backend_challenge",
+	"packageManager": "pnpm@9.15.1",
+	"description": "A bidding app backend challenge for Afriwork",
+	"author": "Mohamed Nesredin<https://github.com/Mohamed-Kaizen>",
+	"homepage": "https://github.com/Mohamed-Kaizen/afriwork_bidding_app_backend_challenge#readme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Mohamed-Kaizen/afriwork_bidding_app_backend_challenge.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Mohamed-Kaizen/afriwork_bidding_app_backend_challenge/issues"
+	},
+	"scripts": {
+		"migrate": "prisma migrate dev",
+		"studio": "prisma studio"
+	},
+	"devDependencies": {
+		"@types/jsonwebtoken": "^9.0.7",
+		"@types/node": "^22.10.2",
+		"prettier": "^3.4.2",
+		"tsx": "^4.19.2",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"@hapi/hapi": "^21.3.12",
+		"@node-rs/argon2": "^2.0.2",
+		"@prisma/client": "^6.1.0",
+		"dotenv": "^16.4.7",
+		"jsonwebtoken": "^9.0.2",
+		"prisma": "^6.1.0",
+		"socket.io": "^4.8.1",
+		"ts-node": "^10.9.2"
+	}
+}

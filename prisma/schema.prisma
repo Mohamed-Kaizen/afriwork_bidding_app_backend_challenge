@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  // provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Bid {
+  id             String         @id @default(uuid())
+
+  amount         Float
+
+  listingId      String
+
+  userId         String
+
+  createdAt      DateTime  @default(now())
+
+  listing        Listing   @relation(fields: [listingId], references: [id])
+
+  bidder         User      @relation(fields: [userId], references: [id])
+}
+
+
+model Listing {
+  id             String         @id @default(uuid())
+
+  title          String
+
+  description    String?
+
+  startingBid    Float
+
+  currentBid     Float?
+
+  createdById    String
+
+  isClosed       Boolean        @default(false)
+
+  createdAt      DateTime       @default(now())
+
+  closedAt       DateTime?
+
+  createdBy      User           @relation(fields: [createdById], references: [id])
+
+  bids           Bid[]
+}
+
+model Notification {
+  id          String         @id @default(uuid())
+
+  message     String
+  
+  userId      String
+
+  createdAt   DateTime          @default(now())
+
+  user        User              @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id            String         @id @default(uuid())
+
+  username      String         @unique
+
+  password      String
+
+  createdAt     DateTime       @default(now())
+
+  listings Listing[]
+
+  bids Bid[]
+
+  notifications Notification[]
+}
