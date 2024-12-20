@@ -4,6 +4,8 @@ import dotenv from "dotenv"
 import * as Vision from "@hapi/vision"
 import * as Inert from "@hapi/inert"
 import Swagger from "hapi-swagger"
+import HapiAuthJwt2 from "hapi-auth-jwt2"
+import { validate } from "./utils/auth"
 
 dotenv.config()
 
@@ -21,6 +23,11 @@ async function init() {
 	const server = Hapi.server({
 		port: process.env.PORT || 8000,
 		host: process.env.HOST || "localhost",
+		routes: {
+			cors: {
+				origin: ["*"],
+			},
+		},
 	})
 
 	await server.register([
@@ -30,7 +37,18 @@ async function init() {
 			plugin: Swagger,
 			options: swaggerOptions,
 		},
+		{
+			plugin: HapiAuthJwt2,
+		},
 	])
+
+	server.auth.strategy("jwt", "jwt", {
+		key: process.env.SECRET_KEY,
+		validate,
+		verifyOptions: { algorithms: ["HS256"] },
+	})
+
+	server.auth.default("jwt")
 
 	await server.start()
 

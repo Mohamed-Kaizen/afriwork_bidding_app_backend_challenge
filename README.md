@@ -25,7 +25,7 @@ A bidding app backend challenge for Afriwork.
 
 ## Authentication and Authorization
 
-- [ ] Implement JWT Authentication
+- [x] Implement JWT Authentication
 - [ ] Implement User Registration and Login
 
 ## API Development
