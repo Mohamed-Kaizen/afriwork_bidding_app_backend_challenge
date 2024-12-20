@@ -13,21 +13,26 @@
 		"url": "https://github.com/Mohamed-Kaizen/afriwork_bidding_app_backend_challenge/issues"
 	},
 	"scripts": {
+		"dev": "nodemon",
 		"migrate": "prisma migrate dev",
 		"studio": "prisma studio"
 	},
 	"devDependencies": {
 		"@types/jsonwebtoken": "^9.0.7",
 		"@types/node": "^22.10.2",
+		"nodemon": "^3.1.9",
 		"prettier": "^3.4.2",
 		"tsx": "^4.19.2",
 		"typescript": "^5.7.2"
 	},
 	"dependencies": {
 		"@hapi/hapi": "^21.3.12",
+		"@hapi/inert": "^7.1.0",
+		"@hapi/vision": "^7.0.3",
 		"@node-rs/argon2": "^2.0.2",
 		"@prisma/client": "^6.1.0",
 		"dotenv": "^16.4.7",
+		"hapi-swagger": "^17.3.2",
 		"jsonwebtoken": "^9.0.2",
 		"prisma": "^6.1.0",
 		"socket.io": "^4.8.1",

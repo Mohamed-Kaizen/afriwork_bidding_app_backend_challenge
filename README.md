@@ -16,7 +16,7 @@ A bidding app backend challenge for Afriwork.
 
 ## Setup and Configuration
 
-- [ ] Initialize backend project
+- [x] Initialize backend project
 - [ ] Set up Database
     - [x] Design Database Schema
     - [x] Create Database Models
