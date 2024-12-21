@@ -4,6 +4,7 @@ import {
 	getActiveListings,
 	closeListing,
 	getListing,
+	getMyListings,
 	getMyListing,
 } from "../services/listing"
 import { type } from "arktype"
@@ -96,10 +97,31 @@ export async function viewListing(request: Request, rep: ResponseToolkit) {
  *
  * @returns The listing
  */
+export async function viewMyListings(request: Request, rep: ResponseToolkit) {
+	const userId = request.auth.credentials.sub as string
+
+	const listings = await getMyListings(userId)
+
+	return rep.response(listings).code(200)
+}
+
+/**
+ * Controller for viewing a user's listing
+ *
+ * @param request - The Hapi request object
+ *
+ * @param rep - The Hapi response toolkit
+ *
+ * @returns The listing
+ */
 export async function viewMyListing(request: Request, rep: ResponseToolkit) {
 	const userId = request.auth.credentials.sub as string
 
-	const listing = await getMyListing(userId)
+	const listingId = request.params.id
+
+	const listing = await getMyListing(userId, listingId)
+
+	if (!listing) return rep.response({ error: "Listing not found" }).code(404)
 
 	return rep.response(listing).code(200)
 }

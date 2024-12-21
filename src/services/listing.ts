@@ -91,8 +91,29 @@ export async function getListing(listingId: string) {
  *
  * @returns All listings created by the user
  */
-export async function getMyListing(userId: string) {
+export async function getMyListings(userId: string) {
 	return await db.listing.findMany({
 		where: { createdById: userId },
+		include: {
+			_count: {
+				select: { bids: true },
+			},
+		},
+	})
+}
+
+/**
+ * Get single listing created by a user
+ *
+ * @param listingId - The ID of the listing
+ *
+ * @param userId - The ID of the user
+ *
+ * @returns The listing
+ */
+export async function getMyListing(userId: string, listingId: string) {
+	return await db.listing.findUnique({
+		where: { id: listingId },
+		include: { bids: true, _count: { select: { bids: true } } },
 	})
 }
