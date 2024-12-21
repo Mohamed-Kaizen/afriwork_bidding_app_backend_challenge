@@ -15,7 +15,8 @@
 	"scripts": {
 		"dev": "nodemon",
 		"migrate": "prisma migrate dev",
-		"studio": "prisma studio"
+		"studio": "prisma studio",
+		"seed": "tsx seed.ts"
 	},
 	"type": "module",
 	"devDependencies": {

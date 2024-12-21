@@ -17,10 +17,10 @@ A bidding app backend challenge for Afriwork.
 ## Setup and Configuration
 
 - [x] Initialize backend project
-- [ ] Set up Database
+- [x] Set up Database
     - [x] Design Database Schema
     - [x] Create Database Models
-    - [ ] Create The Seeder script
+    - [x] Create The Seeder script
 - [ ] Set up Docker and Reverse Proxy
 
 ## Authentication and Authorization
