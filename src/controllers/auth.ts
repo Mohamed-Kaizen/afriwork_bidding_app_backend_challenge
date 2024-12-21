@@ -1,10 +1,9 @@
 import { Request, ResponseToolkit } from "@hapi/hapi"
-
 import { type } from "arktype"
 
 import { registerUser, authenticate } from "../services/auth"
-import { validateUserAuth } from "../utils/validators"
 import { generateToken } from "../utils/jwt"
+import { validateUserAuth } from "../utils/validators"
 
 /**
  * The controller function for registering a new user.

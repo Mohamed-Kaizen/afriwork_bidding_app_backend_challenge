@@ -1,6 +1,7 @@
 import { Request, ResponseToolkit } from "@hapi/hapi"
-import { createOrUpdateBid } from "../services/bid"
 import { type } from "arktype"
+
+import { createOrUpdateBid } from "../services/bid"
 import { validatePlaceBid } from "../utils/validators"
 
 export async function placeBid(request: Request, rep: ResponseToolkit) {

@@ -1,4 +1,6 @@
 import { Request, ResponseToolkit } from "@hapi/hapi"
+import { type } from "arktype"
+
 import {
 	createListing,
 	getActiveListings,
@@ -7,7 +9,6 @@ import {
 	getMyListings,
 	getMyListing,
 } from "../services/listing"
-import { type } from "arktype"
 import { validateCreateListing } from "../utils/validators"
 
 /**

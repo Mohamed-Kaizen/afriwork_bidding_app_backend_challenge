@@ -1,6 +1,6 @@
+import { db } from "../utils/db"
 import { hashPassword, verifyPassword } from "../utils/hash"
 import { generateToken } from "../utils/jwt"
-import { db } from "../utils/db"
 
 /**
  * This function is used to register a new user. It hashes the password before storing it in the database.

@@ -1,9 +1,10 @@
 import Hapi from "@hapi/hapi"
-import { verifyPassword } from "./hash"
-import { generateToken } from "./jwt"
-import { db } from "./db"
 
 import type { JWTClaims } from "./types"
+
+import { db } from "./db"
+import { verifyPassword } from "./hash"
+import { generateToken } from "./jwt"
 
 /**
  * This function is used to validate the JWT token sent by the client. It is used by the hapi-auth-jwt2 plugin.

@@ -1,6 +1,7 @@
+import { createServer } from "http"
+
 import { Server as HapiServer } from "@hapi/hapi"
 import { Server as SocketIOServer } from "socket.io"
-import { createServer } from "http"
 
 let io: SocketIOServer
 

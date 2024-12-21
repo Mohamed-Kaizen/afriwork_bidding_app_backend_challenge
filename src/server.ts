@@ -1,14 +1,15 @@
 import Hapi from "@hapi/hapi"
+import * as Inert from "@hapi/inert"
+import * as Vision from "@hapi/vision"
 import { PrismaClient } from "@prisma/client"
 import dotenv from "dotenv"
-import * as Vision from "@hapi/vision"
-import * as Inert from "@hapi/inert"
-import Swagger from "hapi-swagger"
 import HapiAuthJwt2 from "hapi-auth-jwt2"
-import { validate } from "./utils/auth"
+import Swagger from "hapi-swagger"
+
 import { authRoutes } from "./routes/auth"
-import { listingRoutes } from "./routes/listing"
 import { bidRoutes } from "./routes/bid"
+import { listingRoutes } from "./routes/listing"
+import { validate } from "./utils/auth"
 
 dotenv.config()
 
