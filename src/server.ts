@@ -8,6 +8,7 @@ import HapiAuthJwt2 from "hapi-auth-jwt2"
 import { validate } from "./utils/auth"
 import { authRoutes } from "./routes/auth"
 import { listingRoutes } from "./routes/listing"
+import { bidRoutes } from "./routes/bid"
 
 dotenv.config()
 
@@ -54,6 +55,7 @@ async function init() {
 
 	server.route(authRoutes)
 	server.route(listingRoutes)
+	server.route(bidRoutes)
 
 	await server.start()
 

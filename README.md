@@ -43,14 +43,13 @@ A bidding app backend challenge for Afriwork.
 
 ### Bidding
 
-- [ ] Create endpoints for:
-    - [ ] Viewing a single bid.
-    - [ ] Placing a bid on a listing.
-    - [ ] Updating a bid (by bidder).
-- [ ] Implement logic to:
-    - [ ] It should check if the amount is greater than the current bid and starting amount, if not return an error message.
-    - [ ] It should check if the bid is closed, if it is return an error message.
-    - [ ] It should check if the bid is owned by the bidder, if it is return an error message.
+- [x] Create endpoints for:
+    - [x] Placing a bid on a listing.
+    - [x] Updating a bid (by bidder).
+- [x] Implement logic to:
+    - [x] It should check if the amount is greater than the current bid and starting amount, if not return an error message.
+    - [x] It should check if the bid is closed, if it is return an error message.
+    - [x] It should check if the bid is owned by the bidder, if it is return an error message.
 
 ### Notifications
 

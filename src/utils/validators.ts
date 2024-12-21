@@ -10,3 +10,8 @@ export const validateCreateListing = type({
 	description: "string | null",
 	startBid: "number>0",
 })
+
+export const validatePlaceBid = type({
+	listingId: "string",
+	bidAmount: "number>0",
+})
