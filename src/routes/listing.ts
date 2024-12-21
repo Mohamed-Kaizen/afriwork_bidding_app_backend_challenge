@@ -15,9 +15,17 @@ export const listingRoutes: ServerRoute[] = [
 		handler: createListingHandler,
 	},
 	{
+		method: "POST",
+		path: "/listings/{id}/close",
+		handler: closeListingHandler,
+	},
+	{
 		method: "GET",
 		path: "/listings",
-		handler: viewListings,
+		options: {
+			auth: false,
+			handler: viewListings,
+		},
 	},
 	{
 		method: "GET",
@@ -32,11 +40,9 @@ export const listingRoutes: ServerRoute[] = [
 	{
 		method: "GET",
 		path: "/listings/{id}",
-		handler: viewListing,
-	},
-	{
-		method: "POST",
-		path: "/listings/{id}/close",
-		handler: closeListingHandler,
+		options: {
+			auth: false,
+			handler: viewListing,
+		},
 	},
 ]
