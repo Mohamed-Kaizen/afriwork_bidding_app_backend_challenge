@@ -74,8 +74,8 @@ A bidding app backend challenge for Afriwork.
 
 ## Security
 
-- [ ] Test on common security vulnerabilities
-- [ ] Test any business logic security vulnerabilities
+- [x] Test on common security vulnerabilities
+- [x] Test any business logic security vulnerabilities
 
 ## Documentation
 
