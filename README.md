@@ -52,9 +52,9 @@ pnpm migrate
 
 To use Postgres, first go to [Neon] and create a new database (Or you can use your own postgres database). Then edit the `.env` file and set the `DATABASE_URL` environment variable to your Postgres database URL. Plus go to `prisma/schema.prisma` and set the `provider` to `postgresql`
 
-````sh
+```sh
 DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
-````
+```
 
 Now you can run the following command to create the database tables:
 
@@ -68,19 +68,17 @@ The first time you run the command `migrate`, you will notice that it will promp
 
 ![2024-12-21_07-31](https://github.com/user-attachments/assets/9f31c7d9-afea-4110-8583-f301c4c4d814)
 
-
 Now you can add seed data to the database by running the following command:
 
 ```sh
 pnpm seed
-````
+```
 
 You can check everything is working fine by running the following command:
 
 ```sh
 pnpm studio
 ```
-
 
 ### Run the server
 
@@ -89,7 +87,6 @@ pnpm dev
 ```
 
 enjoy 🎉
-
 
 ## Architecture
 
@@ -135,7 +132,7 @@ enjoy 🎉
 ├── env.ts
 ├── nodemon.json
 └── tsconfig.json
-``` 
+```
 
 ### Database Schema
 
@@ -149,30 +146,29 @@ enjoy 🎉
 - `DATABASE_URL`: The database URL. Default is `sqlite:./dev.db`.
 - `JWT_EXPIRES_IN`: The expiration time for JWT. Default is `10d` (10 days).
 
-
 ### Tools and Libraries Used
 
 - Node Packages:
 
-    * [Hapi] - Our server framework.
-    * [hapi-auth-jwt2] - JWT authentication plugin for hapi.
-    * [hapi-swagger] - Swagger documentation plugin for hapi.
-    * [@hapi/inert] - Static file and directory handlers for hapi.
-    * [@hapi/vision] - Templates rendering support for hapi.
-    * [Prisma](https://prisma.io) - Database ORM.
-    * [@prisma/client] - Prisma client for database queries.
-    * [dotenv] - Environment variables loader.
-    * [jsonwebtoken] - JWT library.
-    * [socket.io] - Real-time updates library.
-    * [arktype] - A Validation library.
-    * [@node-rs/argon2] - Argon2 hashing library.
-    * [nodemon] - Development server.
-    * [prettier] - Code formatter.
-    * [tsx] - TypeScript compiler.
+    - [Hapi] - Our server framework.
+    - [hapi-auth-jwt2] - JWT authentication plugin for hapi.
+    - [hapi-swagger] - Swagger documentation plugin for hapi.
+    - [@hapi/inert] - Static file and directory handlers for hapi.
+    - [@hapi/vision] - Templates rendering support for hapi.
+    - [Prisma](https://prisma.io) - Database ORM.
+    - [@prisma/client] - Prisma client for database queries.
+    - [dotenv] - Environment variables loader.
+    - [jsonwebtoken] - JWT library.
+    - [socket.io] - Real-time updates library.
+    - [arktype] - A Validation library.
+    - [@node-rs/argon2] - Argon2 hashing library.
+    - [nodemon] - Development server.
+    - [prettier] - Code formatter.
+    - [tsx] - TypeScript compiler.
 
 - [Hoppscotch] - API testing tool.
 - [dbdiagram] - Database diagram tool.
-
+- [Neon] - Cloud database for postgres.
 
 # License: MIT
 
