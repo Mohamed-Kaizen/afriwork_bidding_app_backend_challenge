@@ -30,6 +30,12 @@ async function init() {
 			cors: {
 				origin: ["*"],
 			},
+			security: {
+				referrer: false,
+				xss: "enabled",
+				xframe: "sameorigin",
+				noSniff: true,
+			},
 		},
 	})
 
