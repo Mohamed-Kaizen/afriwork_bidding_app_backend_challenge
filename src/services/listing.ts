@@ -83,3 +83,16 @@ export async function getListing(listingId: string) {
 		},
 	})
 }
+
+/**
+ * Get all listings created by a user
+ *
+ * @param userId - The ID of the user
+ *
+ * @returns All listings created by the user
+ */
+export async function getMyListing(userId: string) {
+	return await db.listing.findMany({
+		where: { createdById: userId },
+	})
+}

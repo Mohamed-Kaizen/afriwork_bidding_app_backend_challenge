@@ -4,6 +4,7 @@ import {
 	viewListings,
 	closeListingHandler,
 	viewListing,
+	viewMyListing,
 } from "../controllers/listing"
 
 export const listingRoutes: ServerRoute[] = [
@@ -16,6 +17,11 @@ export const listingRoutes: ServerRoute[] = [
 		method: "GET",
 		path: "/listings",
 		handler: viewListings,
+	},
+	{
+		method: "GET",
+		path: "/listings/mine",
+		handler: viewMyListing,
 	},
 	{
 		method: "GET",

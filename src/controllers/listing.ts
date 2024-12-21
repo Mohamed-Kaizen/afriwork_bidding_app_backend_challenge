@@ -1,5 +1,11 @@
 import { Request, ResponseToolkit } from "@hapi/hapi"
-import { createListing, getActiveListings, closeListing, getListing } from "../services/listing"
+import {
+	createListing,
+	getActiveListings,
+	closeListing,
+	getListing,
+	getMyListing,
+} from "../services/listing"
 import { type } from "arktype"
 import { validateCreateListing } from "../utils/validators"
 
@@ -77,6 +83,23 @@ export async function viewListing(request: Request, rep: ResponseToolkit) {
 	const listing = await getListing(listingId)
 
 	if (!listing) return rep.response({ error: "Listing not found" }).code(404)
+
+	return rep.response(listing).code(200)
+}
+
+/**
+ * Controller for viewing a user's listing
+ *
+ * @param request - The Hapi request object
+ *
+ * @param rep - The Hapi response toolkit
+ *
+ * @returns The listing
+ */
+export async function viewMyListing(request: Request, rep: ResponseToolkit) {
+	const userId = request.auth.credentials.sub as string
+
+	const listing = await getMyListing(userId)
 
 	return rep.response(listing).code(200)
 }
