@@ -60,6 +60,7 @@ A bidding app backend challenge for Afriwork.
 
 ### Real-time Updates
 
+- [ ] Figure out how to connect it to hapi and how to connect it to tools like hoppscotch
 - [ ] Implement real-time updates for:
     - [ ] New bids on a listing.
     - [ ] Bid updates.
